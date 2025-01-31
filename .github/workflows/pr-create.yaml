@@ -11,4 +11,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Get current branch name
-        run: ${GITHUB_REF}"
+        run: ${GITHUB_REF}
