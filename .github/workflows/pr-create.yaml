@@ -1,0 +1,14 @@
+name: Print Branch Name
+
+on: create
+
+jobs:
+  print-branch:
+    runs-on: ubuntu-latest
+    if: ${{ contains(github.ref, 'refs/heads/uat/') }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get current branch name
+        run: echo "Current branch is: ${GITHUB_REF#refs/heads/}"
